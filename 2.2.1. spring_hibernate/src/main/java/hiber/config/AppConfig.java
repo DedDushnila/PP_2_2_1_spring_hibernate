@@ -1,7 +1,9 @@
 package hiber.config;
 
+import hiber.dao.UserDao;
 import hiber.model.Car;
 import hiber.model.User;
+import hiber.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -14,6 +16,8 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import javax.sql.DataSource;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
 @Configuration
@@ -55,4 +59,5 @@ public class AppConfig {
       transactionManager.setSessionFactory(getSessionFactory().getObject());
       return transactionManager;
    }
+
 }
